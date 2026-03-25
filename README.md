@@ -39,4 +39,6 @@ API endpoint: `https://lucasferrara015dev.pythonanywhere.com/api/productos`
 
 - 🎯 [Ver FitShop en vivo](https://4jdv7h.csb.app/)  
 
+- 💻 El entorno de ejecución que funciona actualmente es en CodeSandbox, donde se puede visualizar la tienda con todas sus funcionalidades.
+
 
