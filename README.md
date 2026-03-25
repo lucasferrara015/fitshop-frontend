@@ -25,8 +25,9 @@ Tienda fitness en línea - Frontend React.
 
 ## Backend
 
-El backend está desarrollado en Flask y se encuentra en: [enlace al repo del backend]  
+El backend está desarrollado en Flask y se encuentra en: [FitShop Backend](https://github.com/lucasferrara015/fitshop-backend)  
 API endpoint: `https://lucasferrara015dev.pythonanywhere.com/api/productos`
+
 
 ## Próximos Pasos
 
