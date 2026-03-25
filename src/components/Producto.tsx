@@ -1,6 +1,14 @@
 import { useCarrito } from "../hooks/useCarrito";
 
-const Producto = ({ producto }) => {
+interface ProductoType {
+  id: number;
+  nombre: string;
+  descripcion: string;
+  precio: number;
+  imagen: string;
+}
+
+const Producto = ({ producto }: { producto: ProductoType }) => {
   const { addItem } = useCarrito();
   return (
     <div className="card h-100 shadow-sm">
@@ -25,4 +33,6 @@ const Producto = ({ producto }) => {
     </div>
   );
 };
+
 export default Producto;
+
