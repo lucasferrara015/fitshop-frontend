@@ -19,6 +19,7 @@ interface CarritoContextType {
   removeItem: (id: number) => void;
   increaseQuantity: (id: number) => void;
   decreaseQuantity: (id: number) => void;
+  total: number; // 👈 agregado
 }
 
 export const CarritoContext = createContext<CarritoContextType | undefined>(
@@ -28,13 +29,11 @@ export const CarritoContext = createContext<CarritoContextType | undefined>(
 export const CarritoProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  // Estado inicial: leer de localStorage
   const [carrito, setCarrito] = useState<ProductoCarrito[]>(() => {
     const saved = localStorage.getItem("carrito");
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Guardar cambios en localStorage
   useEffect(() => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
   }, [carrito]);
@@ -67,16 +66,20 @@ export const CarritoProvider: React.FC<{ children: React.ReactNode }> = ({
       if (!producto) return prev;
 
       if (producto.cantidad === 1) {
-        // eliminar el producto si llega a 0
         return prev.filter((item) => item.id !== id);
       } else {
-        // reducir cantidad normalmente
         return prev.map((p) =>
           p.id === id ? { ...p, cantidad: p.cantidad - 1 } : p
         );
       }
     });
   };
+
+  // 🔥 Calcular el total
+  const total = carrito.reduce(
+    (acc, item) => acc + item.precio * item.cantidad,
+    0
+  );
 
   return (
     <CarritoContext.Provider
@@ -86,6 +89,7 @@ export const CarritoProvider: React.FC<{ children: React.ReactNode }> = ({
         removeItem,
         increaseQuantity,
         decreaseQuantity,
+        total,
       }}
     >
       {children}
