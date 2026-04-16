@@ -18,6 +18,8 @@ Frontend desarrollado en React + TypeScript para consumir la API REST del backen
 - Context API para manejar el estado global del carrito.
 
 - Integración con el flujo de pago: el frontend envía la orden al backend, recibe la preferencia de Mercado Pago y redirige al checkout sandbox, mostrando luego el estado del pago en la tienda.
+  
+- Suscripción de usuarios: formulario para que el cliente ingrese su email y reciba más información de la tienda, consejos fitness y ofertas. El backend guarda los correos, generando una base de clientes.
 
 ## 🛠 Tecnologías
 
@@ -28,10 +30,15 @@ Frontend desarrollado en React + TypeScript para consumir la API REST del backen
 
 ## Instalación
 
-1. Clona el repositorio
-2. `npm install`
+1. Clona el repositorio:
+   git clone https://github.com/lucasferrara015/fitshop-frontend.git
+
+2. Instala depencencias:
+   npm install
 3. Copia `.env.example` a `.env` y ajusta la URL de la API si es necesario.
-4. `npm start`
+4. Inicia el servidor de desarrollo:
+   npm start
+
 
 ## Backend
 El backend está desarrollado en Flask.  
