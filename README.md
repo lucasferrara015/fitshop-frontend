@@ -1,15 +1,25 @@
-# FitShop Frontend
+# 🏋️‍♂️ FitShop Frontend
 
-Tienda fitness en línea - Frontend React.
+# MVP - Tienda fitness en línea
 
-## Estado Actual: MVP
+Frontend desarrollado en React + TypeScript para consumir la API REST del backend en Flask.
 
-- Catálogo de productos consumido desde API REST.
-- Filtros por categoría y búsqueda.
-- Carrito de compras con persistencia en localStorage.
-- Diseño responsive con Bootstrap.
 
-## Tecnologías
+## ✨ Funcionalidades
+
+- Catálogo de productos consumido desde la API REST del backend.
+
+- Filtros por categoría y búsqueda para mejorar la navegación.
+
+- Carrito de compras con persistencia en localStorage, manteniendo los productos seleccionados incluso al recargar la página.
+
+- Diseño responsive con Bootstrap 5, adaptado a distintos dispositivos.
+
+- Context API para manejar el estado global del carrito.
+
+- Integración con el flujo de pago: el frontend envía la orden al backend, recibe la preferencia de Mercado Pago y redirige al checkout sandbox, mostrando luego el estado del pago en la tienda.
+
+## 🛠 Tecnologías
 
 - React 18 + TypeScript
 - Bootstrap 5
@@ -30,11 +40,10 @@ API endpoint en producción: https://lucasferrara015dev.pythonanywhere.com/api/p
 
 
 ## Próximos Pasos
+- Integración de envíos (validar que el usuario pueda elegir un método de entrega y que el pedido se registre con esa información).
+- Autenticación de usuarios (login/registro).
+- Panel de administración para gestión de productos y pedidos.
 
-- Página de detalle de producto
-- Autenticación de usuarios
-- Panel de administración
-- Mejoras en la experiencia de usuario
 
 ## Demo
 
